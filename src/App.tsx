@@ -1,5 +1,7 @@
+import { CurrencyConvert } from "./components";
+
 function App() {
-  return <div className=""></div>;
+  return <CurrencyConvert />;
 }
 
 export default App;
