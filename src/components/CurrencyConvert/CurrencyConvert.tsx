@@ -1,13 +1,14 @@
 import { useEffect, useState } from "react";
-import { InputWithSelect } from "./InputWithSelect";
+import { Input } from "./Input";
+import { Select } from "./Select";
 
 export interface ICurrencyConvert {
   availableCurrencies: string[];
   exchangeRate: number;
   baseCurrency: string;
   targetCurrency: string;
-  handleChangeBaseCurrency: (e: React.ChangeEvent<HTMLSelectElement>) => void;
-  handleChangeTargetCurrency: (e: React.ChangeEvent<HTMLSelectElement>) => void;
+  handleChangeBaseCurrency: (newCurrency: string) => void;
+  handleChangeTargetCurrency: (newCurrency: string) => void;
 }
 
 export const CurrencyConvert: React.FC<ICurrencyConvert> = ({
@@ -25,35 +26,45 @@ export const CurrencyConvert: React.FC<ICurrencyConvert> = ({
     setTargetAmount(+baseAmount * exchangeRate);
   }, [exchangeRate]);
 
-  const handleChangeBaseAmount = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setBaseAmount(e.target.value);
-    setTargetAmount(+e.target.value * exchangeRate);
+  const handleChangeBaseAmount = (newAmount: number | string) => {
+    setBaseAmount(newAmount);
+    setTargetAmount(+newAmount * exchangeRate);
   };
-  const handleChangeTargetAmount = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setTargetAmount(e.target.value);
-    setBaseAmount(+e.target.value / exchangeRate);
+  const handleChangeTargetAmount = (newAmount: number | string) => {
+    setTargetAmount(newAmount);
+    setBaseAmount(+newAmount / exchangeRate);
   };
 
   return (
-    <div className="">
-      <InputWithSelect
-        selectLabel="Convert from"
-        selectName="Base Currency"
-        options={availableCurrencies}
-        currentOption={baseCurrency}
-        currentAmount={baseAmount || ""}
-        handleChangeOption={handleChangeBaseCurrency}
-        handleChangeAmount={handleChangeBaseAmount}
-      />
-      <InputWithSelect
-        selectLabel="Convert to"
-        selectName="Target Currency"
-        options={availableCurrencies}
-        currentOption={targetCurrency}
-        currentAmount={targetAmount || ""}
-        handleChangeOption={handleChangeTargetCurrency}
-        handleChangeAmount={handleChangeTargetAmount}
-      />
+    <div>
+      <div>
+        <div>
+          <Select
+            options={availableCurrencies}
+            currentOption={baseCurrency}
+            handleChangeOption={handleChangeBaseCurrency}
+          />
+          <Input
+            value={baseAmount}
+            subject={baseCurrency}
+            handleChangeValue={handleChangeBaseAmount}
+            inputMode="numeric"
+          />
+        </div>
+        <div>
+          <Select
+            options={availableCurrencies}
+            currentOption={targetCurrency}
+            handleChangeOption={handleChangeTargetCurrency}
+          />
+          <Input
+            value={targetAmount}
+            subject={targetCurrency}
+            handleChangeValue={handleChangeTargetAmount}
+            inputMode="numeric"
+          />
+        </div>
+      </div>
     </div>
   );
 };
