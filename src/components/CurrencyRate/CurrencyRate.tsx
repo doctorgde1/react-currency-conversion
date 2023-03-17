@@ -13,7 +13,10 @@ export const CurrencyRate: React.FC<ICurrencyRate> = ({
   return (
     <div className={className.concat(" ", "flex")}>
       <span className="after:content-['-'] after:px-2">
-        <span>{currencyBase}</span>/{currencyTarget}
+        <span className="font-medium text-midnight-express-100">
+          {currencyBase}
+        </span>
+        /{currencyTarget}
       </span>
       <span>{Number(conversionRate).toFixed(2)}</span>
     </div>
