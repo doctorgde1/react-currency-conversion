@@ -37,7 +37,7 @@ export const Select: React.FC<ISelect> = ({
     >
       <div
         tabIndex={0}
-        className="p-3 w-full text-2xl ring-4 focus:outline-none"
+        className="p-2 w-full focus:ring-4 focus:outline-none bg-midnight-express-500 text-midnight-express-300 focus:ring-midnight-express-300"
         role={"listbox"}
         onKeyDown={(e) => {
           if (e.code == "ArrowDown" || e.code == "ArrowUp") {
@@ -50,9 +50,9 @@ export const Select: React.FC<ISelect> = ({
           }
         }}
       >
-        <span className="">{currentOption}</span>
+        <span className="text-midnight-express-100">{currentOption}</span>
         <ul
-          className={"absolute top-full origin-top z-50 flex flex-col ring-4 transition duration-300 ease-[cubic-bezier(0.45, 0.02, 0.09, 0.98)] w-full left-0 overflow-x-hidden overflow-y-auto max-h-80".concat(
+          className={"absolute top-full origin-top z-50 flex flex-col ring-4 ring-midnight-express-300 bg-midnight-express-500 transition duration-300 ease-[cubic-bezier(0.45, 0.02, 0.09, 0.98)] w-full left-0 overflow-x-hidden overflow-y-auto max-h-60".concat(
             " ",
             isOpen
               ? "scale-x-100 opacity-100 "
@@ -64,7 +64,7 @@ export const Select: React.FC<ISelect> = ({
             return (
               <li
                 key={option}
-                className="p-2 break-words transition duration-500 ease-[cubic-bezier(0.45, 0.02, 0.09, 0.98)] ring-2 hover:ring-4 hover:z-20"
+                className="p-2 break-words transition duration-500 ease-[cubic-bezier(0.45, 0.02, 0.09, 0.98)] bg-midnight-express-500 hover:text-midnight-express-100 ring-2 ring-midnight-express-100 hover:ring-4 hover:z-20 hover:scale-105"
                 role={"option"}
                 onClick={(e: React.MouseEvent<HTMLElement>) => {
                   handleChangeOption(e.currentTarget.innerHTML);

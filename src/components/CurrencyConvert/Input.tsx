@@ -26,7 +26,7 @@ export const Input: React.FC<IInput> = ({
         placeholder={subject}
         onChange={(e) => handleChangeValue(e.target.value || "")}
         inputMode={inputMode}
-        className="p-4 w-full text-xl focus:ring-4 focus:outline-none"
+        className="p-4 w-full text-xl bg-transparent focus:ring-4 focus:outline-none focus:ring-midnight-express-300"
       />
     </div>
   );
