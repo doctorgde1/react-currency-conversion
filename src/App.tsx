@@ -29,18 +29,18 @@ function App() {
 
   return (
     <div className=" w-screen min-h-screen bg-[url('/src/assets/grid.svg')] bg-[length:50%] sm:bg-[length:20%] lg:bg-[length:10%] bg-center bg-midnight-express-900">
-      <div className="container overflow-hidden px-8 max-w-2xl min-h-screen sm:px-20">
-        <div className="flex flex-col gap-20 justify-center py-7 pb-20 min-h-screen">
+      <div className="container overflow-hidden px-8 max-w-5xl min-h-screen sm:px-32">
+        <div className="flex flex-col gap-32 justify-center py-7 pb-20 min-h-screen">
           <header className="bg-gradient-to-r shadow-xl text-midnight-express-300 from-midnight-express-500">
             <div className="relative z-10 w-fit">
-              <div className="flex flex-col p-2 w-fit after:content-[''] after:absolute after:right-0 after:w-[2px] after:top-1/2 after:-translate-y-1/2 after:opacity-60 after:h-3/4 after:bg-midnight-express-900">
+              <div className="flex flex-col p-3 w-fit after:content-[''] after:absolute after:right-0 after:w-[2px] after:top-1/2 after:-translate-y-1/2 after:opacity-60 after:h-3/4 after:bg-midnight-express-900">
                 {usdError && <span className="text-red-500">{usdError}</span>}
                 {isUsdLoading && (
                   <img src="/src/assets/loading.svg" alt="loading icon" />
                 )}
                 {convertUsd && (
                   <CurrencyRate
-                    className="text-sm"
+                    className="text-2xl"
                     currencyBase={"USD"}
                     currencyTarget={"UAH"}
                     conversionRate={convertUsd["conversion_rate"]}
@@ -52,7 +52,7 @@ function App() {
                 )}
                 {convertEur && (
                   <CurrencyRate
-                    className="text-sm"
+                    className="text-2xl"
                     currencyBase={"EUR"}
                     currencyTarget={"UAH"}
                     conversionRate={convertEur["conversion_rate"]}
@@ -67,7 +67,7 @@ function App() {
           )}
           {convertData && (
             <CurrencyConvert
-              className="flex relative z-10 justify-center items-center w-full h-fit sm:w-[30rem]"
+              className="flex relative z-10 justify-center items-center w-full h-fit"
               availableCurrencies={availableCurrencies}
               exchangeRate={convertData["conversion_rate"]}
               baseCurrency={baseCurrency}
@@ -78,7 +78,7 @@ function App() {
           )}
         </div>
       </div>
-      <div className="fixed top-0 right-1/2 h-screen translate-x-1/2 sm:right-0 sm:translate-x-0 aspect-square">
+      <div className="fixed top-0 right-1/2 translate-x-1/2 sm:right-0 sm:translate-x-0 lg:h-screen h-[150vh] aspect-square">
         <RoundedHexagon
           gradientFrom="#B6DCF6"
           gradientTo="#001341"

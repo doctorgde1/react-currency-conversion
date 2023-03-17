@@ -39,31 +39,31 @@ export const CurrencyConvert: React.FC<ICurrencyConvert> = ({
 
   return (
     <div className={className.concat(" ", "")}>
-      <div className="flex relative flex-col gap-12 w-full">
-        <div className="flex flex-col gap-2 items-center w-full sm:items-start">
+      <div className="flex relative flex-col gap-20 w-full">
+        <div className="flex flex-col gap-3 items-center w-full sm:items-start">
           <Select
-            className="w-32 text-sm after:absolute after:right-1 after:w-4 after:h-1 after:content-[''] after:bg-[url('/src/assets/arrow_down.svg')] after:bg-contain after:bg-no-repeat"
+            className="w-52 text-2xl after:absolute after:right-3 after:w-4 after:h-3 after:content-[''] after:bg-[url('/src/assets/arrow_down.svg')] after:bg-contain after:bg-no-repeat"
             options={availableCurrencies}
             currentOption={baseCurrency}
             handleChangeOption={handleChangeBaseCurrency}
           />
           <Input
-            className="bg-gradient-to-r text-midnight-express-100 from-midnight-express-500"
+            className="text-3xl bg-gradient-to-r text-midnight-express-100 from-midnight-express-500"
             value={baseAmount}
             subject={baseCurrency}
             handleChangeValue={handleChangeBaseAmount}
             inputMode="numeric"
           />
         </div>
-        <div className="flex flex-col gap-2 items-center w-full sm:items-start">
+        <div className="flex flex-col gap-3 items-center w-full sm:items-start">
           <Select
-            className="w-32 text-sm after:absolute after:right-1 after:w-4 after:h-1 after:content-[''] after:bg-[url('src/assets/arrow_down.svg')] after:bg-contain after:bg-no-repeat"
+            className="w-52 text-2xl after:absolute after:right-3 after:w-4 after:h-3 after:content-[''] after:bg-[url('/src/assets/arrow_down.svg')] after:bg-contain after:bg-no-repeat"
             options={availableCurrencies}
             currentOption={targetCurrency}
             handleChangeOption={handleChangeTargetCurrency}
           />
           <Input
-            className="w-full bg-gradient-to-r text-midnight-express-100 from-midnight-express-500"
+            className="w-full text-3xl bg-gradient-to-r text-midnight-express-100 from-midnight-express-500"
             value={targetAmount}
             subject={targetCurrency}
             handleChangeValue={handleChangeTargetAmount}

@@ -37,7 +37,7 @@ export const Select: React.FC<ISelect> = ({
     >
       <div
         tabIndex={0}
-        className="p-2 w-full focus:ring-4 focus:outline-none bg-midnight-express-500 text-midnight-express-300 focus:ring-midnight-express-300"
+        className="p-4 w-full focus:ring-4 focus:outline-none bg-midnight-express-500 text-midnight-express-300 focus:ring-midnight-express-300"
         role={"listbox"}
         onKeyDown={(e) => {
           if (e.code == "ArrowDown" || e.code == "ArrowUp") {
