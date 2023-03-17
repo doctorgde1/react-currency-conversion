@@ -28,7 +28,7 @@ function App() {
   );
 
   return (
-    <div className=" w-screen min-h-screen bg-[url('src/assets/grid.svg')] bg-[length:50%] sm:bg-[length:20%] lg:bg-[length:10%] bg-center bg-midnight-express-900">
+    <div className=" w-screen min-h-screen bg-[url('/src/assets/grid.svg')] bg-[length:50%] sm:bg-[length:20%] lg:bg-[length:10%] bg-center bg-midnight-express-900">
       <div className="container overflow-hidden px-8 max-w-2xl min-h-screen sm:px-20">
         <div className="flex flex-col gap-20 justify-center py-7 pb-20 min-h-screen">
           <header className="bg-gradient-to-r shadow-xl text-midnight-express-300 from-midnight-express-500">
@@ -36,7 +36,7 @@ function App() {
               <div className="flex flex-col p-2 w-fit after:content-[''] after:absolute after:right-0 after:w-[2px] after:top-1/2 after:-translate-y-1/2 after:opacity-60 after:h-3/4 after:bg-midnight-express-900">
                 {usdError && <span className="text-red-500">{usdError}</span>}
                 {isUsdLoading && (
-                  <img src="src/assets/loading.svg" alt="loading icon" />
+                  <img src="/src/assets/loading.svg" alt="loading icon" />
                 )}
                 {convertUsd && (
                   <CurrencyRate
@@ -48,7 +48,7 @@ function App() {
                 )}
                 {eurError && <span className="text-red-500">{eurError}</span>}
                 {isEurLoading && (
-                  <img src="src/assets/loading.svg" alt="loading icon" />
+                  <img src="/src/assets/loading.svg" alt="loading icon" />
                 )}
                 {convertEur && (
                   <CurrencyRate
@@ -63,7 +63,7 @@ function App() {
           </header>
           {convertError && <span className="text-red-500">{convertError}</span>}
           {isConvertLoading && (
-            <img src="src/assets/loading.svg" alt="loading icon" />
+            <img src="/src/assets/loading.svg" alt="loading icon" />
           )}
           {convertData && (
             <CurrencyConvert

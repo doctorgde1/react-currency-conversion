@@ -42,7 +42,7 @@ export const CurrencyConvert: React.FC<ICurrencyConvert> = ({
       <div className="flex relative flex-col gap-12 w-full">
         <div className="flex flex-col gap-2 items-center w-full sm:items-start">
           <Select
-            className="w-32 text-sm after:absolute after:right-1 after:w-4 after:h-1 after:content-[''] after:bg-[url('src/assets/arrow_down.svg')] after:bg-contain after:bg-no-repeat"
+            className="w-32 text-sm after:absolute after:right-1 after:w-4 after:h-1 after:content-[''] after:bg-[url('/src/assets/arrow_down.svg')] after:bg-contain after:bg-no-repeat"
             options={availableCurrencies}
             currentOption={baseCurrency}
             handleChangeOption={handleChangeBaseCurrency}
