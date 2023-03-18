@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { Input } from "./Input";
 import { Select } from "./Select";
-import arrowDown from "../..//assets/arrow_down.svg";
 
 export interface ICurrencyConvert {
   className?: string;

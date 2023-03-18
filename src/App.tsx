@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { CurrencyConvert, CurrencyRate, RoundedHexagon } from "./components";
 import { useFetch } from "./hooks";
-import loading from "./assets/grid.svg";
+import loading from "./assets/loading.svg";
 
 const apiKey = "554744e84ae4a2b6c47adc7a";
 const availableCurrencies = ["UAH", "USD", "EUR"];
