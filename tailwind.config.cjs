@@ -24,8 +24,8 @@ module.exports = {
         "spin-back": "spin-back 1s linear infinite",
       },
       backgroundImage: {
-        arrow_down: "url('public/arrow_down.svg')",
-        grid: "url('public/grid.svg')",
+        arrow_down: "url('./arrow_down.svg')",
+        grid: "url('./grid.svg')",
       },
     },
   },
