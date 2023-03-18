@@ -23,6 +23,10 @@ module.exports = {
       animation: {
         "spin-back": "spin-back 1s linear infinite",
       },
+      backgroundImage: {
+        arrow_down: "url('src/assets/arrow_down.svg')",
+        grid: "url('src/assets/grid.svg')",
+      },
     },
   },
   plugins: [

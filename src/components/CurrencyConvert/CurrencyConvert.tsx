@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Input } from "./Input";
 import { Select } from "./Select";
+import arrowDown from "../..//assets/arrow_down.svg";
 
 export interface ICurrencyConvert {
   className?: string;
@@ -42,7 +43,7 @@ export const CurrencyConvert: React.FC<ICurrencyConvert> = ({
       <div className="flex relative flex-col gap-20 w-full">
         <div className="flex flex-col gap-3 items-center w-full sm:items-start">
           <Select
-            className="w-52 text-2xl after:absolute after:right-3 after:w-4 after:h-3 after:content-[''] after:bg-[url('/src/assets/arrow_down.svg')] after:bg-contain after:bg-no-repeat"
+            className="w-52 text-2xl after:absolute after:right-3 after:w-4 after:h-3 after:content-[''] after:bg-arrow_down after:bg-contain after:bg-no-repeat"
             options={availableCurrencies}
             currentOption={baseCurrency}
             handleChangeOption={handleChangeBaseCurrency}
@@ -57,7 +58,7 @@ export const CurrencyConvert: React.FC<ICurrencyConvert> = ({
         </div>
         <div className="flex flex-col gap-3 items-center w-full sm:items-start">
           <Select
-            className="w-52 text-2xl after:absolute after:right-3 after:w-4 after:h-3 after:content-[''] after:bg-[url('/src/assets/arrow_down.svg')] after:bg-contain after:bg-no-repeat"
+            className="w-52 text-2xl after:absolute after:right-3 after:w-4 after:h-3 after:content-[''] after:bg-arrow_down after:bg-contain after:bg-no-repeat"
             options={availableCurrencies}
             currentOption={targetCurrency}
             handleChangeOption={handleChangeTargetCurrency}
