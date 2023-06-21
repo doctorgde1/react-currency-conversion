@@ -1,14 +1,16 @@
+import { convert } from "../../utils";
+
 export interface ICurrencyRate {
   className?: string;
   currencyBase: string;
   currencyTarget: string;
-  conversionRate: number;
+  exchangeRates: string[];
 }
 export const CurrencyRate: React.FC<ICurrencyRate> = ({
   className = "",
   currencyBase,
   currencyTarget,
-  conversionRate,
+  exchangeRates,
 }) => {
   return (
     <div className={className.concat(" ", "flex")}>
@@ -18,7 +20,9 @@ export const CurrencyRate: React.FC<ICurrencyRate> = ({
         </span>
         /{currencyTarget}
       </span>
-      <span>{Number(conversionRate).toFixed(2)}</span>
+      <span>
+        {convert(1, currencyBase, currencyTarget, exchangeRates).toFixed(2)}
+      </span>
     </div>
   );
 };
