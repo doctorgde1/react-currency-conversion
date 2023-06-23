@@ -1,8 +1,8 @@
 export interface IInput {
   className?: string;
-  value: number | string;
+  value: number;
   subject: string;
-  handleChangeValue: (newValue: number | string) => void;
+  handleChangeValue: (newValue: number) => void;
   inputMode?: "text" | "numeric";
 }
 
@@ -24,7 +24,7 @@ export const Input: React.FC<IInput> = ({
         name={subject}
         id={subject}
         placeholder={subject}
-        onChange={(e) => handleChangeValue(e.target.value || "")}
+        onChange={(e) => handleChangeValue(Number(e.target.value))}
         inputMode={inputMode}
         className="p-6 w-full bg-transparent focus:ring-4 focus:outline-none text-inherit focus:ring-midnight-express-300"
       />

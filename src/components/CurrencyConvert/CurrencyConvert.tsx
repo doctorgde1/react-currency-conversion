@@ -1,13 +1,12 @@
 import { useEffect, useState } from "react";
 import { Input } from "./Input";
 import { Select } from "./Select";
-import arrowDown from "../../assets/arrow_down.svg";
 import { convert } from "../../utils";
 
 export interface ICurrencyConvert {
   className?: string;
   availableCurrencies: string[];
-  exchangeRates: number;
+  exchangeRates: { [key: string]: number };
   baseCurrency: string;
   targetCurrency: string;
   handleChangeBaseCurrency: (newCurrency: string) => void;
@@ -23,8 +22,8 @@ export const CurrencyConvert: React.FC<ICurrencyConvert> = ({
   handleChangeBaseCurrency,
   handleChangeTargetCurrency,
 }) => {
-  const [baseAmount, setBaseAmount] = useState<number | string>(0);
-  const [targetAmount, setTargetAmount] = useState<number | string>(0);
+  const [baseAmount, setBaseAmount] = useState(0);
+  const [targetAmount, setTargetAmount] = useState(0);
 
   useEffect(() => {
     setTargetAmount(
@@ -32,13 +31,13 @@ export const CurrencyConvert: React.FC<ICurrencyConvert> = ({
     );
   }, [baseCurrency, targetCurrency]);
 
-  const handleChangeBaseAmount = (newAmount: number | string) => {
+  const handleChangeBaseAmount = (newAmount: number) => {
     setBaseAmount(newAmount);
     setTargetAmount(
       convert(newAmount, baseCurrency, targetCurrency, exchangeRates)
     );
   };
-  const handleChangeTargetAmount = (newAmount: number | string) => {
+  const handleChangeTargetAmount = (newAmount: number) => {
     setTargetAmount(newAmount);
     setBaseAmount(
       convert(newAmount, targetCurrency, baseCurrency, exchangeRates)
