@@ -4,7 +4,7 @@ export interface ICurrencyRate {
   className?: string;
   currencyBase: string;
   currencyTarget: string;
-  exchangeRates: string[];
+  exchangeRates: { [key: string]: number };
 }
 export const CurrencyRate: React.FC<ICurrencyRate> = ({
   className = "",
